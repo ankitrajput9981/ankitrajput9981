@@ -4,7 +4,7 @@ const Contact = require("./src/contact");
 require("./src/conn");
 const app=express();
 
-
+const port= process.env.PORT || 3000;
 
 // start
 const {MongoClient} = require('mongodb');
@@ -29,9 +29,7 @@ app.set("views",static_path);
 app.get("",(req,res)=>{
     res.render('in');
 });
-app.get("/about",(req,res)=>{
-    res.render('about');
-});
+
 
 app.post("",async(req,res)=>{
     try{
@@ -44,4 +42,7 @@ app.post("",async(req,res)=>{
     }
  });
 
-app.listen(3000);
+app.listen(port,()=>{
+    console.log(`listening to the port no at ${port}`);
+
+});
