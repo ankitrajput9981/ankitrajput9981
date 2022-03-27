@@ -9,7 +9,7 @@ const port= process.env.PORT || 3000;
 // start
 const {MongoClient} = require('mongodb');
 const { Collection } = require("mongoose");
-const url = 'mongodb://localhost/27017';
+const url = 'mongodb+srv://Ankit7987:<Iiitg@123>@cluster0.ggmky.mongodb.net/myFirstDatabase?retryWrites=true&w=majoritmongodb+srv://Ankitr9981:Iiitg123@cluster0.ggmky.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const databaseName = "portfolio";
 const client = new MongoClient(url);
 
@@ -29,6 +29,9 @@ app.set("views",static_path);
 app.get("",(req,res)=>{
     res.render('in');
 });
+
+
+
 
 
 app.post("",async(req,res)=>{
